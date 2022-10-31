@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Enter로 form에 입력한 내용 붙이기</title>
+</head>
+
+<body>
+    <h2>Enter를 누르면 입력한 텍스트가 나옵니다.</h2>
+    <input type="text" id="inputText" placeholder="입력해주세요">
+    <p id="textvalue"></p>
+<script>
+    const textBox =  document.querySelector('#inputText');
+    const textValue = document.querySelector('#textvalue');
+
+    function showText(event){
+        if(event.key == 'Enter') {
+            const inputTxt = document.querySelector('#inputText').value;
+			textValue.innerHTML = '입력한 텍스트 : ' + inputTxt;
+		}
+    }
+    textBox.addEventListener('keydown', showText);
+</script>
+</body>
+
+</html>
